@@ -206,7 +206,7 @@ class SortDetailsScreenState extends State<SortDetailsScreen> {
         if (isCancelled) break;
         updatePointers([i, i + 1]);
         setUpdateText('Is ${numbers[i]} > ${numbers[i + 1]} ?');
-        await Future.delayed(Duration(seconds: (_delay ~/ 2).toInt()));
+        await Future.delayed(Duration(seconds: 2));
         if (numbers[i] > numbers[i + 1]) {
           swap(numbers, i, i + 1);
           setUpdateText('Yes, so swapping.');
@@ -231,7 +231,7 @@ class SortDetailsScreenState extends State<SortDetailsScreen> {
       for (int j = i + 1; j < n; j++) {
         if (isCancelled) break;
         updatePointers([i, j]);
-        await Future.delayed(const Duration(milliseconds: 250));
+        await Future.delayed(const Duration(seconds: 2));
         if (numbers[j] < numbers[minIdx]) minIdx = j;
       }
 
@@ -256,7 +256,7 @@ class SortDetailsScreenState extends State<SortDetailsScreen> {
       if (isCancelled) break;
       updatePointers([i]);
       setUpdateText('Taking ${numbers[i]} as key element.');
-      await Future.delayed(const Duration(seconds: 1));
+      await Future.delayed(const Duration(seconds: 2));
       key = numbers[i];
       j = i - 1;
 
